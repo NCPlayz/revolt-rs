@@ -58,8 +58,8 @@ impl Channel {
 
     pub fn description(&self) -> Option<&str> {
         match self {
-            Channel::Text(channel) => channel.description.as_ref().map(|s| s.as_str()),
-            Channel::Voice(channel) => channel.description.as_ref().map(|s| s.as_str()),
+            Channel::Text(channel) => channel.description.as_deref(),
+            Channel::Voice(channel) => channel.description.as_deref(),
         }
     }
 
@@ -119,15 +119,15 @@ impl Channel {
         }
     }
 
-    pub fn edit(&self, name: &str, description: Option<&str>, icon: Option<Asset>, nsfw: bool) -> Result<(), String> {
+    pub fn edit(&self, _name: &str, _description: Option<&str>, _icon: Option<Asset>, _nsfw: bool) -> Result<(), String> {
         todo!();
         match self {
             Channel::Text(channel) => {
-                let mut channel = channel.clone();
+                let mut _channel = channel.clone();
                 Ok(())
             },
             Channel::Voice(channel) => {
-                let mut channel = channel.clone();
+                let mut _channel = channel.clone();
                 Ok(())
             },
         }
@@ -137,11 +137,11 @@ impl Channel {
         todo!();
         match self {
             Channel::Text(channel) => {
-                let mut channel = channel.clone();
+                let mut _channel = channel.clone();
                 Ok(())
             },
             Channel::Voice(channel) => {
-                let mut channel = channel.clone();
+                let mut _channel = channel.clone();
                 Ok(())
             },
         }
